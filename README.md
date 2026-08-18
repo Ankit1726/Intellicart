@@ -419,19 +419,19 @@ Personalized Business Action
 
 <div align="center">
 
-## ***Ankit Gupta 👨‍💻***
+### ***Ankit Gupta 👨‍💻***
 
 ### **AIML Engineer • Agentic AI Developer**
 
 Building intelligent applications using:
 
-**Python • Machine Learning • FastAPI • Scikit-Learn • LangChain • LangGraph • Agentic AI**
+***Python • Machine Learning • FastAPI • Scikit-Learn • LangChain • LangGraph • Agentic AI***
 
 </div>
 
 ---
 
-### ⭐ Support
+#### ⭐ Support
 
 If you found **IntelliCart AI** useful or interesting, consider giving the repository a **⭐ Star on GitHub**.
 
