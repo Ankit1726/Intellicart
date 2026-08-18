@@ -357,13 +357,6 @@ IntelliCart AI can support several real-world business scenarios:
 * Ensemble learning models
 * Automated model retraining
 
-#### 🤖 Explainable AI
-
-* SHAP-based explanations
-* Feature importance visualization
-* Explain why a customer is classified as "At Risk"
-* Individual prediction explanations
-
 #### 📊 Advanced Analytics
 
 * Interactive customer segmentation
