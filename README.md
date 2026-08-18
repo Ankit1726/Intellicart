@@ -22,17 +22,12 @@
 <img src="https://img.shields.io/badge/CSS3-UI-1572B6?style=for-the-badge&logo=css3"/>
 <img src="https://img.shields.io/badge/JavaScript-Interactive-F7DF1E?style=for-the-badge&logo=javascript"/>
 <img src="https://img.shields.io/badge/Docker-Deployment-2496ED?style=for-the-badge&logo=docker"/>
-
 </p>
 
 <p align="center">
-
 <a href="https://intellicart-cxm3.onrender.com" target="_blank">
-
 <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Visit%20Now-success?style=for-the-badge"/>
-
 </a>
-
 </p>
 
 </div>
