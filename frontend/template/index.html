@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliCart 🛒 </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="bg-field">
+        <div class="glow glow-a"></div>
+        <div class="glow glow-b"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-mark">◈</span>
+            <div class="brand-text">
+                <span class="brand-name">IntelliCart 🛒</span>
+                <span class="brand-sub">Customer Behavior Analytic Intelligence System</span>
+            </div>
+        </div>
+        <div class="topbar-status" id="apiStatus">
+            <span class="dot"></span> model online
+        </div>
+    </header>
+
+    <main class="layout">
+
+        <!-- ============ FORM PANEL ============ -->
+        <section class="panel form-panel">
+            <h1 class="panel-title">Customer Analytic Board </h1>
+            <p class="panel-sub">Enter behavioral &amp; profile data to predict loyalty and the right offer.</p>
+
+            <form id="customerForm">
+
+                <div class="field-group">
+                    <div class="group-label"><span class="idx">Spend &amp; Value</span></div>
+                    <div class="field-row">
+                        <label>Income (₹/yr)
+                            <input type="number" name="Income" min="0" step="100" value="52000" required>
+                        </label>
+                        <label>Total Spent (lifetime)
+                            <input type="number" name="Total_Spent" min="0" step="10" value="620" required>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="group-label"><span class="idx">Purchase Behavior</span></div>
+                    <div class="field-row four">
+                        <label>Web Purchases
+                            <input type="number" name="NumWebPurchases" min="0" value="4" required>
+                        </label>
+                        <label>Store Purchases
+                            <input type="number" name="NumStorePurchases" min="0" value="5" required>
+                        </label>
+                        <label>Catalog Purchases
+                            <input type="number" name="NumCatalogPurchases" min="0" value="2" required>
+                        </label>
+                        <label>Deal Purchases
+                            <input type="number" name="NumDealsPurchases" min="0" value="1" required>
+                        </label>
+                    </div>
+                    <div class="field-row">
+                        <label>Web Visits / Month
+                            <input type="number" name="NumWebVisitsMonth" min="0" value="6" required>
+                        </label>
+                        <label>Recency (days since last order)
+                            <input type="number" name="Recency" min="0" max="365" value="18" required>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="group-label"><span class="idx">Engagement</span></div>
+                    <div class="field-row">
+                        <label class="toggle-label">
+                            Responded to last campaign
+                            <input type="checkbox" name="Response" class="toggle">
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                        <label class="toggle-label">
+                            Filed a complaint (2yr)
+                            <input type="checkbox" name="Complain" class="toggle">
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="group-label"><span class="idx">Profile</span></div>
+                    <div class="field-row">
+                        <label>Age
+                            <input type="number" name="Age" min="18" max="100" value="34" required>
+                        </label>
+                        <label>Customer Tenure (days)
+                            <input type="number" name="Customer_TenureDay" min="0" value="410" required>
+                        </label>
+                    </div>
+                    <div class="field-row">
+                        <label>Children at home
+                            <input type="number" name="Total_Children" min="0" max="10" value="1" required>
+                        </label>
+                        <label>Education
+                            <select name="Education">
+                                <option value="Undergraduate">Undergraduate</option>
+                                <option value="Graduate" selected>Graduate</option>
+                                <option value="Postgraduate">Postgraduate</option>
+                                <option value="Basic">Basic</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="field-row">
+                        <label>Living Situation
+                            <select name="Living_Partner">
+                                <option value="Partner" selected>With Partner</option>
+                                <option value="Alone">Alone</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Analyze Customer</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M13 5l7 7-7 7v-4H4v-6h9V5z" />
+                    </svg>
+                </button>
+            </form>
+        </section>
+
+        <!-- ============ RESULT PANEL ============ -->
+        <section class="panel result-panel">
+
+            <div class="result-empty" id="resultEmpty">
+                <div class="orbit-idle">
+                    <div class="ring r1"></div>
+                    <div class="ring r2"></div>
+                    <div class="ring r3"></div>
+                    <div class="core"></div>
+                </div>
+                <p>Fill in the form and run an analysis to see the customer's loyalty segment, score, and recommended
+                    offer.</p>
+            </div>
+
+            <div class="result-content" id="resultContent" hidden>
+
+                <div class="orbit-wrap">
+                    <svg id="orbitSvg" viewBox="0 0 320 320" class="orbit-svg">
+                        <circle class="orbit-ring" cx="160" cy="160" r="60"></circle>
+                        <circle class="orbit-ring" cx="160" cy="160" r="100"></circle>
+                        <circle class="orbit-ring" cx="160" cy="160" r="140"></circle>
+                        <circle id="customerDot" cx="160" cy="30" r="7"></circle>
+                    </svg>
+                    <div class="orbit-center">
+                        <span class="score-value" id="scoreValue">0</span>
+                        <span class="score-label">loyalty score</span>
+                    </div>
+                </div>
+
+                <div class="segment-badge" id="segmentBadge">
+                    <span class="segment-name" id="segmentName">—</span>
+                    <span class="loyal-pill" id="loyalPill">—</span>
+                </div>
+                <p class="segment-headline" id="segmentHeadline"></p>
+
+                <div class="offer-card" id="offerCard">
+                    <div class="offer-top">
+                        <span class="offer-label">Recommended Offer</span>
+                        <span class="offer-discount" id="offerDiscount">0%</span>
+                    </div>
+                    <div class="offer-name" id="offerName">—</div>
+                    <ul class="perk-list" id="perkList"></ul>
+                </div>
+
+                <div class="subscores" id="subscores"></div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

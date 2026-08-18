@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  staysense-ai:
+    build: .
+    container_name: intellicart intelligence system
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the model folder so you can swap nyc_model.pkl without rebuilding the image
+      - ./model:/app/model
+    restart: unless-stopped
