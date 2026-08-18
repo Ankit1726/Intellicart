@@ -421,7 +421,7 @@ Personalized Business Action
 
 ### ***Ankit Gupta 👨‍💻***
 
-### **AIML Engineer • Agentic AI Developer**
+### ***AIML Engineer • Agentic AI Developer***
 
 Building intelligent applications using:
 
@@ -441,9 +441,9 @@ Your support motivates me to continue building practical **AI, Machine Learning,
 
 <div align="center">
 
-#### 🛒 **IntelliCart AI**
+### 🛒 **IntelliCart AI**
 
-### **Understand Customers. Predict Risk. Personalize Engagement.**
+#### ***Understand Customers. Predict Risk. Personalize Engagement.***
 
 **Made with ❤️ by Ankit Gupta**
 
